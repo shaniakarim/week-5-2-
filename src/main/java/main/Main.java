@@ -2,17 +2,23 @@ package main;
 
 public class Main {
     public static void main(String[] args) {
-        Author author1 = new Author("George Orwell", "British");
-        Author author2 = new Author("Harper Lee", "American");
-
-        Book book1 = new Book("1984", author1, 1949);
-        Book book2 = new Book("To Kill a Mockingbird", author2, 1960);
-
         Bookshelf shelf = new Bookshelf();
+
+        Book book1 = new Book("1984", "George Orwell", "978-0451524935");
+        Book book2 = new Book("Animal Farm", "George Orwell", "978-0451526342");
+
         shelf.addBook(book1);
         shelf.addBook(book2);
 
-        System.out.println("Books on the shelf:");
+        System.out.println("Initial bookshelf contents:");
+        shelf.displayBooks();
+        System.out.println();
+
+        System.out.println("Removing 1984...");
+        shelf.removeBook("1984");
+        System.out.println();
+
+        System.out.println("Updated bookshelf contents:");
         shelf.displayBooks();
     }
 }

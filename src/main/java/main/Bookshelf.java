@@ -13,13 +13,14 @@ public class Bookshelf {
         books.add(book);
     }
 
-    public void removeBook(Book book) {
-        books.remove(book);
+    public void removeBook(String title) {
+        books.removeIf(book -> book.getTitle().equals(title));
     }
 
     public void displayBooks() {
+        System.out.println("Books on the shelf:");
         for (Book book : books) {
-            System.out.println(book.getTitle() + " by " + book.getAuthor().getName() + " (" + book.getYear() + ")");
+            System.out.println("Title: " + book.getTitle() + ", Author: " + book.getAuthor() + ", ISBN: " + book.getISBN());
         }
     }
 }

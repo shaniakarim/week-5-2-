@@ -2,24 +2,24 @@ package main;
 
 public class Book {
     private String title;
-    private Author author;
-    private int year;
+    private String author;
+    private String isbn;
 
-    public Book(String title, Author author, int year) {
+    public Book(String title, String author, String isbn) {
         this.title = title;
         this.author = author;
-        this.year = year;
+        this.isbn = isbn;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public Author getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public int getYear() {
-        return year;
+    public String getISBN() {
+        return isbn;
     }
 }
